@@ -7,7 +7,8 @@ Vagrant.configure(2) do |config|
   
   # First, get settings from my-vars.yml
   require 'yaml'
-  myvars = YAML.load_file('my-vars.yml') # TODO should probably error out if my-vars DNE
+  myvarsfile = File.dirname(__FILE__)+'/my-vars.yml'
+  myvars = YAML.load_file(myvarsfile) # TODO should probably error out if my-vars DNE
   
   # Our starting point for CentOS is Jeff Geerling's ansible base box. 
   # https://github.com/geerlingguy/packer-centos-7/
