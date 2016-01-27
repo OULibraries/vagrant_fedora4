@@ -1,0 +1,16 @@
+---
+- name: getting apache uid
+  command: id -u apache
+  register: apache_user
+- name: getting apache gid
+  command: id -g apache
+  register: apache_group
+- name: Unmount /srv
+  mount: name=/srv fstype=vboxsf src=srv  state=unmounted
+- name: Mount srv to /srv with the right permissions
+  mount:
+    name: /srv
+    fstype: vboxsf
+    src: srv
+    opts: "uid={{apache_user.stdout}},gid={{apache_group.stdout}}"
+    state: mounted
