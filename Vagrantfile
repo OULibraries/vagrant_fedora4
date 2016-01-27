@@ -33,7 +33,7 @@ Vagrant.configure(2) do |config|
   ### Application Specific Setup #########
 
   # mount the /srv folder with the right permissions
-  config.vm.synced_folder "./srv/", "/srv/", owner: "apache", group: "apache"
+  config.vm.synced_folder "./srv/", "/srv/"
     
   # Then do d7 stuff
   config.vm.provision "ansible_local" do |ansible|
