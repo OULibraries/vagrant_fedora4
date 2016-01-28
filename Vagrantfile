@@ -36,11 +36,11 @@ Vagrant.configure(2) do |config|
   # mount the /srv folder with the right permissions
   config.vm.synced_folder "./srv/", "/srv/"
     
-  # Then do d7 stuff
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.provisioning_path = "/vagrant"
-    ansible.galaxy_role_file = "requirements.yml"
-    ansible.playbook = "vagrant.yml"
-  end
+  # # Then do d7 stuff
+  # config.vm.provision "ansible_local" do |ansible|
+  #   ansible.provisioning_path = "/vagrant"
+  #   ansible.galaxy_role_file = "requirements.yml"
+  #   ansible.playbook = "vagrant.yml"
+  # end
   
 end
