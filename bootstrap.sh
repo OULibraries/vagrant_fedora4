@@ -1,13 +1,12 @@
 #!/bin/bash
 
-
 # we need git and ansible to get started
 yum install -y git
 yum install -y ansible
 
 # ansible complains if these files are on the windows share because permissions
 cp /vagrant/hosts /etc/ansible/hosts
-cp /vagrant/.vagrant/.vagrant/machines/default/virtualbox/private_key /etc/ansible/private_key
+cp /vagrant/.vagrant/machines/default/virtualbox/private_key /etc/ansible/private_key
 # set complaint-free permissions
 chmod 600 /etc/ansible/private_key
 chmod -x /etc/ansible/hosts
