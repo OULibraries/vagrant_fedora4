@@ -25,11 +25,11 @@ Vagrant.configure(2) do |config|
     config.vm.hostname = myvars["httpd_dn_suffix"] || "drupal.vagrant.test"
   end
 
-  # Do control machine tasks first
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.provisioning_path = "/vagrant"
-    ansible.playbook = "control-machine.yml"
-  end
+  # # Do control machine tasks first
+  # config.vm.provision "ansible_local" do |ansible|
+  #   ansible.provisioning_path = "/vagrant"
+  #   ansible.playbook = "control-machine.yml"
+  # end
 
   ### Application Specific Setup #########
 
