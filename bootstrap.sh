@@ -12,5 +12,5 @@ chmod 600 /etc/ansible/private_key
 chmod -x /etc/ansible/hosts
 
 # run ansible
-ansible-playbook --private-key=/etc/ansible/private_key vagrant.yml
+ansible-playbook --inventory-file=/etc/ansible/hosts --private-key=/etc/ansible/private_key vagrant.yml
 
