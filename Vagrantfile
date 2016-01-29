@@ -36,6 +36,12 @@ Vagrant.configure(2) do |config|
   # mount the /srv folder with the right permissions
   config.vm.synced_folder "./srv/", "/srv/"
 
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/srv", "1"]
+  end
+
+  
+
   # Temorary workaround because Windows
   config.vm.provision "shell", path: "bootstrap.sh"
 
