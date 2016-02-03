@@ -25,22 +25,26 @@ Vagrant.configure(2) do |config|
     config.vm.hostname = myvars["httpd_dn_suffix"] || "drupal.vagrant.test"
   end
 
-  # Do control machine tasks first
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.provisioning_path = "/vagrant"
-    ansible.playbook = "control-machine.yml"
-  end
+  # # Do control machine tasks first
+  # config.vm.provision "ansible_local" do |ansible|
+  #   ansible.provisioning_path = "/vagrant"
+  #   ansible.playbook = "control-machine.yml"
+  # end
 
   ### Application Specific Setup #########
 
   # mount the /srv folder with the right permissions
   config.vm.synced_folder "./srv/", "/srv/"
+  
+  # Temorary workaround because Windows
+  config.vm.provision "shell", path: "bootstrap.sh"
+
     
-  # Then do d7 stuff
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.provisioning_path = "/vagrant"
-    ansible.galaxy_role_file = "requirements.yml"
-    ansible.playbook = "vagrant.yml"
-  end
+  # # Then do d7 stuff
+  # config.vm.provision "ansible_local" do |ansible|
+  #   ansible.provisioning_path = "/vagrant"
+  #   ansible.galaxy_role_file = "requirements.yml"
+  #   ansible.playbook = "vagrant.yml"
+  # end
   
 end
