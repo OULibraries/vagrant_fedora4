@@ -7,9 +7,9 @@
     - name: /srv is a directory
       file: path=/srv state=directory mode=0755 force=yes
   roles:
-    - jsnshrmn.centos7
-    - jsnshrmn.d7
-    - jsnshrmn.ngrok
+    - OULibraries.centos7
+    - OULibraries.d7
+    - OULibraries.ngrok
   tasks:
     - name: Disable selinux for vagrant
       selinux: state=disabled

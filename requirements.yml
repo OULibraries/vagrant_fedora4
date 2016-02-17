@@ -1,13 +1,13 @@
 ---
-# fetch jsnshrmn.centos7 from github
+# fetch OULibraries.centos7 from github
 - src: https://github.com/OULibraries/ansible-role-centos7
   version: master
-  name: jsnshrmn.centos7
-# fetch jsnshrmn.d7 from github
+  name: OULibraries.centos7
+# fetch OULibraries.d7 from github
 - src: https://github.com/OULibraries/ansible-role-d7
   version: master
-  name: jsnshrmn.d7
-# fetch jsnshrmn.ngrok from github
+  name: OULibraries.d7
+# fetch OULibraries.ngrok from github
 - src: https://github.com/OULibraries/ansible-role-ngrok
   version: master
-  name: jsnshrmn.ngrok
+  name: OULibraries.ngrok
