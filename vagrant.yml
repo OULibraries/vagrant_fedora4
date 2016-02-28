@@ -8,12 +8,12 @@
       file: path=/srv state=directory mode=0755 force=yes
   roles:
     - OULibraries.centos7
-    - OULibraries.d7
+    - OULibraries.fedora4
     - OULibraries.ngrok
   tasks:
     - name: Disable selinux for vagrant
       selinux: state=disabled
-    - name: Add apache user to vagrant group
-      command: usermod -a -G vagrant apache
+    - name: Add tomcat user to vagrant group
+      command: usermod -a -G vagrant tomcat
   post_tasks:
     - include: vagrant-post-tasks.yml

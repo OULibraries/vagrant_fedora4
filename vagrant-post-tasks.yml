@@ -1,10 +1,10 @@
 ---
-- name: getting apache uid
-  command: id -u apache
-  register: apache_user
-- name: getting apache gid
-  command: id -g apache
-  register: apache_group
+- name: getting tomcat uid
+  command: id -u tomcat
+  register: tomcat_user
+- name: getting tomcat gid
+  command: id -g tomcat
+  register: tomcat_group
 - name: Unmount /srv
   mount: name=/srv fstype=vboxsf src=srv  state=unmounted
 - name: Mount srv to /srv with the right permissions
@@ -12,5 +12,5 @@
     name: /srv
     fstype: vboxsf
     src: srv
-    opts: "uid={{apache_user.stdout}},gid={{apache_group.stdout}}"
+    opts: "uid={{tomcat_user.stdout}},gid={{tomcat_group.stdout}}"
     state: mounted

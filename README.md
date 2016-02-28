@@ -1,4 +1,4 @@
-# Drupal 7 Vagrant + Ansible
+# Fedora Commons 4 Vagrant + Ansible
 
 ##  Notes
 

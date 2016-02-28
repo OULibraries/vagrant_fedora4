@@ -3,10 +3,10 @@
 - src: https://github.com/OULibraries/ansible-role-centos7
   version: master
   name: OULibraries.centos7
-# fetch OULibraries.d7 from github
-- src: https://github.com/OULibraries/ansible-role-d7
+# fetch OULibraries.fedora4 from github
+- src: https://github.com/OULibraries/ansible-role-fedora4
   version: master
-  name: OULibraries.d7
+  name: OULibraries.fedora4
 # fetch OULibraries.ngrok from github
 - src: https://github.com/OULibraries/ansible-role-ngrok
   version: master

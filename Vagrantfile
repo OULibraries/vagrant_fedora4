@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
 
   # For lucky people who can use landrush for local DNS, read in the hostname to use
   if Vagrant.has_plugin?("landrush") && config.landrush.enabled  then
-    config.vm.hostname = myvars["httpd_dn_suffix"] || "drupal.vagrant.test"
+    config.vm.hostname = myvars["local_dn_suffix"] || "fedora.vm.test"
   end
 
   # # Do control machine tasks first
@@ -40,7 +40,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", path: "bootstrap.sh"
 
     
-  # # Then do d7 stuff
+  # # Then do fedora 4 stuff
   # config.vm.provision "ansible_local" do |ansible|
   #   ansible.provisioning_path = "/vagrant"
   #   ansible.galaxy_role_file = "requirements.yml"
