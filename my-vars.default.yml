@@ -16,7 +16,7 @@ user_pass: '$6$rounds=100000$qrlkLzoJAmDl4q46$8lUP.o5oe8Cmr/OCy8/pdIvbuSP8KaC8cq
 
 # Web Server Settings
 
-# local domain for drupal sites, mainly for landrush users
+# local domain - mainly for landrush users
 local_dn_suffix: 'fedora.vm.test'
 
 # The hostnames of the sites you will build.
