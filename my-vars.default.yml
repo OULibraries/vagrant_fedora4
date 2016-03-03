@@ -2,22 +2,22 @@
 # Your email address
 email: 'user@example.com'
 
-## Ngrok
-ngrok_port: '8080'
-ngrok_dn_suffix: 'ngrok.io'
-ngrok_tunnel_proto: 'http'
+# Ngrok
 ngrok_authtoken: ''
+# Configuration for tunnels. This example forwards port 8080 on the vagrant host available at
+# http://fedora-dev1.ngrok.io.
+# Note that because proto == http rather than tls, traffic between the vagrant host and ngrok is cleartext.
+# DO NOT PASS SENSITIVE DATA OVER CLEARTEXT TUNNELS.
+tunnels:
+  - name: 'fedora-dev1'
+    dn_suffix: 'ngrok.io'
+    port: '8080'
+    proto: 'http'
 
-# Passwords
-
+# Local passwords
 mariadb_root_pass: 'root'
 # crypt value of 'libacct' because ansible
 user_pass: '$6$rounds=100000$qrlkLzoJAmDl4q46$8lUP.o5oe8Cmr/OCy8/pdIvbuSP8KaC8cqVHvmsMzObotRakn2lSMEnu/z0bI4NbXJ4zPoQ.8yUWvw2SqveDJ1'
 
-# Web Server Settings
-
 # local domain - mainly for landrush users
 local_dn_suffix: 'fedora.vm.test'
-
-# The hostnames of the sites you will build.
-sites: ['fedora-dev1']
